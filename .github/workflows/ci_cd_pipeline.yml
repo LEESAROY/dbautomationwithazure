@@ -7,7 +7,7 @@ on:
       - main
 
 jobs:
-  setup-mysql:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -24,5 +24,5 @@ jobs:
         MYSQL_PASSWORD: ${{ secrets.MYSQL_PASSWORD }}
         MYSQL_DATABASE: ${{ secrets.MYSQL_DATABASE }}
       run: |
-        mysql -h $MYSQL_HOST -u $MYSQL_USER -p$MYSQL_PASSWORD $MYSQL_DATABASE < add_deprtments > output.log
+        mysql -h $MYSQL_HOST -u $MYSQL_USER -p$MYSQL_PASSWORD $MYSQL_DATABASE < add_departments.sql > output.log
         cat output.log
