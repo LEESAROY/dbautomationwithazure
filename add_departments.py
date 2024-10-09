@@ -1,10 +1,10 @@
 import pymysql  
 
 connection = pymysql.connect(
-    host='localhost',  
-    user='rootdb',  
-    password='leesaroy@12345',
-    database='companydb'
+    host=os.getenv('MYSQL_HOST'),  
+    user=os.getenv('MYSQL_USER'),  
+    password=os.getenv('MYSQL_PASSWORD'),
+    database=os.getenv('MYSQL_DATABASE')
 )
 
 script_path = 'add_departments.sql'
