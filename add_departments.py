@@ -1,4 +1,5 @@
 import pymysql  
+import os
 
 connection = pymysql.connect(
     host=os.getenv('MYSQL_HOST'),  
